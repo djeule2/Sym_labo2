@@ -1,6 +1,9 @@
 package com.example.activite_threadui;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkInfo;
@@ -32,6 +35,15 @@ public class SymComManager {
 
     SymComManager(Context context){
         this.context = context;
+
+        context.registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if (isNetworkAvailable()) {
+                    sendRequestQueu();
+                }
+            }
+            }, new IntentFilter(ConnectivityManager.EXTRA_NETWORK));
     }
 
     /*
