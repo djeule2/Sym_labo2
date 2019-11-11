@@ -17,8 +17,9 @@
         android:id="@+id/TDiff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/TDifferee"
-        android:layout_below="@id/TAsyn"/>
+        android:layout_below="@id/TAsyn"
+        android:onClick="startDelayedActivity"
+        android:text="@string/TDifferee" />
 
     <Button
         android:id="@+id/TObj"
@@ -33,5 +34,12 @@
         android:layout_height="wrap_content"
         android:text="@string/TCompressee"
         android:layout_below="@id/TObj"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/TGraphQL"
+        android:layout_below="@id/TCom"/>
 
 </RelativeLayout>

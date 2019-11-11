@@ -43,7 +43,7 @@ public class SymComManager {
                     sendRequestQueu();
                 }
             }
-            }, new IntentFilter(ConnectivityManager.EXTRA_NETWORK));
+        }, new IntentFilter(ConnectivityManager.EXTRA_NETWORK));
     }
 
     /*
@@ -165,7 +165,6 @@ public class SymComManager {
                     }
                 }
             }
-
         }
 
         protected void onPostExecute (String s){

@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".DelayedActivity">
 
+    <TextView
+        android:id="@+id/delayedResponse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
 </androidx.constraintlayout.widget.ConstraintLayout>
