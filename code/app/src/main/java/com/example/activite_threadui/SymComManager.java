@@ -43,7 +43,7 @@ public class SymComManager {
                     sendRequestQueu();
                 }
             }
-            }, new IntentFilter(ConnectivityManager.EXTRA_NETWORK));
+            }, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
     }
 
     /*

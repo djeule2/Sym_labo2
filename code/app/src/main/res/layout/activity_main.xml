@@ -49,5 +49,11 @@
         android:layout_height="wrap_content"
         android:text="@string/TCompresee"
         android:layout_below="@id/TObj"/>
+    <Button
+        android:id="@+id/TGraphQL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/TGraphQl"
+        android:layout_below="@id/TCom"/>
 
 </RelativeLayout>

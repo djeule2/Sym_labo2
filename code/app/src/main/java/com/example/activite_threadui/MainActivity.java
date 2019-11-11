@@ -2,6 +2,7 @@ package com.example.activite_threadui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,9 +52,32 @@ public class MainActivity extends AppCompatActivity {
         buttonObjectJson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                        symComManager.sendRequest("{\"query\": \"{author(id: 23){id first_name last_name posts{title content}}}\"}" , " http://sym.iict.ch/api/graphql");
+                        symComManager.sendRequest("{\n" +
+                                " \"directory\":\n" +
+                                "   {\n" +
+                                "     \"person\":\n" +
+                                "       {\n" +
+                                "         \"name\": \"mathieu\",\n" +
+                                "         \"firstname\": \"mathieu\",\n" +
+                                "         \"gender\": \"m\",\n" +
+                                "         \"phone\" : 12133\n" +
+                                "        }\n" +
+                                "     }\n" +
+                                "}" , " http://sym.iict.ch/rest/json ");
 
             }
         });
+
+        final Button buttonGraphQl = (Button) findViewById(R.id.TGraphQL);
+
+
+        buttonGraphQl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GraphQlActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

@@ -6,5 +6,6 @@
     <string name="TCompresee">Transmission Compresées</string>
     <string name="TAsynchroneOuput">output_transmission_Asynchrones</string>
     <string name="TAsynObjetOutput">output_Transmission_Json</string>
+    <string name="TGraphQl">output_Transmission_Graph_Ql</string>
 
 </resources>
