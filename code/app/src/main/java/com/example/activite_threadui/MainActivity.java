@@ -17,34 +17,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         symComManager = new SymComManager(getApplicationContext());
 
-        symComManager.setCommunicationEventListener(new CommunicationEventListener() {
-            @Override
-            public boolean handleServerResponse(String reponse) {
-                TextView textView = (TextView) findViewById(R.id.TAsynOuput);
-               textView.setText(reponse);
-                return true;
-            }
-        });
 
-        final Button buttonAsynchrone = (Button) findViewById(R.id.TAsyn);
-
-
-        buttonAsynchrone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                symComManager.sendRequest("edddd", "http://sym.iict.ch/" );
-            }
-        });
-
-        symComManager.setCommunicationEventListener(new CommunicationEventListener() {
-            @Override
-            public boolean handleServerResponse(String reponse) {
-                TextView textView = (TextView) findViewById(R.id.TAsynObjetOutput);
-                textView.setText(reponse);
-                return true;
-            }
-        });
-
+/*
 
         final Button buttonObjectJson = (Button) findViewById(R.id.TObj);
 
@@ -68,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
         final Button buttonGraphQl = (Button) findViewById(R.id.TGraphQL);
 
 
@@ -79,5 +54,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+=======
+ */
+    }
+
+    public void startAsyncActivity(View view) {
+        Intent intent = new Intent(this, AsyncActivity.class);
+        startActivity(intent);
+    }
+
+    public void startDelayedActivity(View view) {
+        Intent intent = new Intent(this, DelayedActivity.class);
+        startActivity(intent);
+>>>>>>> 5fc061d646e1154b10fd8a7b3995f6841f1c2881
     }
 }

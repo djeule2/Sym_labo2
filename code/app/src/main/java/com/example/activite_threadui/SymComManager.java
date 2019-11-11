@@ -43,7 +43,11 @@ public class SymComManager {
                     sendRequestQueu();
                 }
             }
+<<<<<<< HEAD
             }, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+=======
+        }, new IntentFilter(ConnectivityManager.EXTRA_NETWORK));
+>>>>>>> 5fc061d646e1154b10fd8a7b3995f6841f1c2881
     }
 
     /*
@@ -51,7 +55,7 @@ public class SymComManager {
     s'il n'y a pas de connexion internet on ajoute la requêt dans une file d'attente
      */
 
-    public void sendRequest(String request, String url){
+    public void sendRequest(String request, String url) throws Exception { // TODO exception perso?
         if(isNetworkAvailable()){
             new AsynTaskSendRequest().execute(url, request);
         }else {
@@ -165,7 +169,6 @@ public class SymComManager {
                     }
                 }
             }
-
         }
 
         protected void onPostExecute (String s){

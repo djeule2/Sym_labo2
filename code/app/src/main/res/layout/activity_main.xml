@@ -6,54 +6,46 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp" >
 
-
-    <TextView
-        android:id="@+id/TAsynOuput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="output_transmission_Asynchrones"
-        />
     <Button
         android:id="@+id/TAsyn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/TAsynchrone"
-        android:layout_below="@+id/TAsynOuput"/>
-
+        android:onClick="startAsyncActivity"
+        android:text="@string/TAsynchrone" />
 
     <Button
         android:id="@+id/TDiff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/TDifferee"
-        android:layout_below="@id/TAsyn"/>
+        android:layout_below="@id/TAsyn"
+        android:onClick="startDelayedActivity"
+        android:text="@string/TDifferee" />
 
-    <TextView
-        android:id="@+id/TAsynObjetOutput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="output_transmission_Asynchrones"
-        android:layout_below="@id/TDiff"
-        />
     <Button
         android:id="@+id/TObj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/TObjet"
-        android:layout_below="@id/TAsynObjetOutput"/>
+        android:layout_below="@id/TDiff"/>
+
     <Button
         android:id="@+id/TCom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/TCompresee"
+        android:text="@string/TCompressee"
         android:layout_below="@id/TObj"/>
     <Button
         android:id="@+id/TGraphQL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/TGraphQl"
+        android:layout_below="@id/TCom"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/TGraphQL"
         android:layout_below="@id/TCom"/>
 
 </RelativeLayout>

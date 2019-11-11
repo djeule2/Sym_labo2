@@ -13,7 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".GraphQlActivity"></activity>
+=======
+        <activity android:name=".DelayedActivity"></activity>
+        <activity android:name=".AsyncActivity" />
+>>>>>>> 5fc061d646e1154b10fd8a7b3995f6841f1c2881
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
