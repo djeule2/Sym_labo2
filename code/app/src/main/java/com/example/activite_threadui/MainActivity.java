@@ -43,4 +43,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DelayedActivity.class);
         startActivity(intent);
     }
+
+    public void startCompressionActivity(View view) {
+        Intent intent = new Intent(this, CompressionActivity.class);
+        startActivity(intent);
+    }
 }

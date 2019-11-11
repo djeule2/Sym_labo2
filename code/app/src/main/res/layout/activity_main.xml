@@ -32,8 +32,9 @@
         android:id="@+id/TCom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/TCompressee"
-        android:layout_below="@id/TObj"/>
+        android:layout_below="@id/TObj"
+        android:onClick="startCompressionActivity"
+        android:text="@string/TCompressee" />
 
     <Button
         android:id="@+id/button"
