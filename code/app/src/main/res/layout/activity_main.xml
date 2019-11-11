@@ -40,7 +40,8 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/TGraphQL"
-        android:layout_below="@id/TCom"/>
+        android:layout_below="@id/TCom"
+        android:onClick="startGraphQLActivity"
+        android:text="@string/TGraphQL" />
 
 </RelativeLayout>

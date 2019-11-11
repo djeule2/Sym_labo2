@@ -7,5 +7,7 @@
     <string name="TAsynchroneOuput">output_transmission_Asynchrones</string>
     <string name="TAsynObjetOutput">output_Transmission_Json</string>
     <string name="TGraphQL">Transmission GraphQL</string>
+    <string name="choixAuteur">Choix d\'un auteur</string>
+    <string name="postesAuteur">Postes de l\'auteur</string>
 
 </resources>
