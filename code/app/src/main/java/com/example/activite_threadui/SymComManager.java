@@ -51,7 +51,7 @@ public class SymComManager {
     s'il n'y a pas de connexion internet on ajoute la requêt dans une file d'attente
      */
 
-    public void sendRequest(String request, String url){
+    public void sendRequest(String request, String url) throws Exception { // TODO exception perso?
         if(isNetworkAvailable()){
             new AsynTaskSendRequest().execute(url, request);
         }else {

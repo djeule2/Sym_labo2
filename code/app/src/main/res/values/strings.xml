@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Activite-ThreadUI</string>
-    <string name="TAsynchrone">Transmission Asynchrones</string>
-    <string name="TDifferee">Transmission Differées</string>
-    <string name="TObjet">Transmission Objets</string>
-    <string name="TCompresee">Transmission Compresées</string>
+    <string name="TAsynchrone">Transmission Asynchrone</string>
+    <string name="TDifferee">Transmission Différée</string>
+    <string name="TObjet">Transmission d\'Objets</string>
+    <string name="TCompressee">Transmission Compressée</string>
     <string name="TAsynchroneOuput">output_transmission_Asynchrones</string>
     <string name="TAsynObjetOutput">output_Transmission_Json</string>
 
