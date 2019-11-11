@@ -28,7 +28,8 @@ public class AsyncActivity extends AppCompatActivity {
 
         // Envoie de la requête
         try {
-            symComManager.sendRequest("edddd", "http://sym.iict.ch/");
+            String json = "{\"test\":\"goal\"}";
+            symComManager.sendRequest(json, "http://sym.iict.ch/rest/txt");
         } catch (Exception e) {
             e.printStackTrace();
         }
