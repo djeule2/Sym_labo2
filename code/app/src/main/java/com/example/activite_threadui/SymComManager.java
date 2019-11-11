@@ -43,12 +43,10 @@ public class SymComManager {
                     sendRequestQueu();
                 }
             }
-<<<<<<< HEAD
+
             }, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-=======
-        }, new IntentFilter(ConnectivityManager.EXTRA_NETWORK));
->>>>>>> 5fc061d646e1154b10fd8a7b3995f6841f1c2881
-    }
+
+        }
 
     /*
     Permet d'envoyer un document request vers le serveur désigné par url

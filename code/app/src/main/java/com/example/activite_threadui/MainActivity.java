@@ -66,6 +66,5 @@ public class MainActivity extends AppCompatActivity {
     public void startDelayedActivity(View view) {
         Intent intent = new Intent(this, DelayedActivity.class);
         startActivity(intent);
->>>>>>> 5fc061d646e1154b10fd8a7b3995f6841f1c2881
     }
 }
