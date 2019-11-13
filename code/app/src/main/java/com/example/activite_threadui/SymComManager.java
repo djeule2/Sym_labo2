@@ -110,7 +110,7 @@ public class SymComManager {
                 conn.setRequestMethod("POST");
 
                 //adding the headers for request
-                conn.setRequestProperty("Content-Type", "application/xml, charset=UTF-8");
+                conn.setRequestProperty("Content-Type", "application/xml");
                 conn.setRequestProperty("Accept", "application/xml");
 
                 conn.setDoInput(true);
@@ -134,7 +134,6 @@ public class SymComManager {
                 conn.connect();
                 int response = conn.getResponseCode();
                 if (response != HttpURLConnection.HTTP_OK) {
-                    System.out.println(my_data.toString()+"!!!!!!");
                     return "unsuccessful";
                 }
 
