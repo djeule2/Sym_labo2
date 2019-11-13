@@ -9,5 +9,7 @@
     <string name="TAsynObjetOutput">output_Transmission_Json</string>
     <string name="TGraphQl">output_Transmission_Graph_Ql</string>
     <string name="TGraphQL">Transmission GraphQL</string>
+    <string name="choixAuteur">Choix d\'un auteur</string>
+    <string name="postesAuteur">Postes de l\'auteur</string>
 
 </resources>

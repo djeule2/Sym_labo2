@@ -81,11 +81,13 @@ public class SymComManager {
     }
 
     /*
-    Permet de définir un listener listener qui sera invoqué lorsque la réponse parviendra au client
+    Permet de définir un listener qui sera invoqué lorsque la réponse parviendra au client
      */
     public void setCommunicationEventListener (CommunicationEventListener listener){
-        if (!thelisteners.contains(listener))
-            thelisteners.add(listener);
+        if (thelisteners.contains(listener)) {
+            thelisteners.clear();
+        }
+        thelisteners.add(listener);
     }
 
 

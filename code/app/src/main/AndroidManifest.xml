@@ -13,11 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".GraphQLActivity"></activity>
+        <activity android:name=".CompressionActivity" />
         <activity android:name=".ObjetJsonActivity"></activity>
         <activity android:name=".ObjetsXmlActivity" />
-        <activity android:name=".GraphQlActivity" />
         <activity android:name=".DelayedActivity" />
-        <activity android:name=".CompressionActivity" />
         <activity android:name=".AsyncActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

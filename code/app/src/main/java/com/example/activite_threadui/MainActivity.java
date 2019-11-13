@@ -83,4 +83,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CompressionActivity.class);
         startActivity(intent);
     }
+
+    public void startGraphQLActivity(View view) {
+        Intent intent = new Intent(this, GraphQLActivity.class);
+        startActivity(intent);
+    }
 }
