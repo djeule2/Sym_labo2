@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private SymComManager symComManager ;
@@ -58,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
  */
     }
 
+
     public void startAsyncActivity(View view) {
         Intent intent = new Intent(this, AsyncActivity.class);
         startActivity(intent);
@@ -66,6 +65,18 @@ public class MainActivity extends AppCompatActivity {
     public void startDelayedActivity(View view) {
         Intent intent = new Intent(this, DelayedActivity.class);
         startActivity(intent);
+    }
+
+    public void startObjetsXmlActivity (View view){
+        Intent intent = new Intent(this, ObjetsXmlActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void startObjetsJsonActivity (View view){
+        Intent intent = new Intent(this, ObjetJsonActivity.class);
+        startActivity(intent);
+
     }
 
     public void startCompressionActivity(View view) {
