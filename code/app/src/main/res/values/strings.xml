@@ -2,10 +2,12 @@
     <string name="app_name">Activite-ThreadUI</string>
     <string name="TAsynchrone">Transmission Asynchrone</string>
     <string name="TDifferee">Transmission Différée</string>
-    <string name="TObjet">Transmission d\'Objets</string>
+    <string name="TObjetJson">Transmission Objets Json</string>
+    <string name="TObjetXml">Transmission Objets Xml</string>
     <string name="TCompressee">Transmission Compressée</string>
     <string name="TAsynchroneOuput">output_transmission_Asynchrones</string>
     <string name="TAsynObjetOutput">output_Transmission_Json</string>
+    <string name="TGraphQl">output_Transmission_Graph_Ql</string>
     <string name="TGraphQL">Transmission GraphQL</string>
 
 </resources>
