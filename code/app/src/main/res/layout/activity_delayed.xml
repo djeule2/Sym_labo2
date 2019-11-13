@@ -6,9 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".DelayedActivity">
 
+    <EditText
+        android:id="@+id/fieldDelayed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/textDelayed"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/buttonDelayed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fieldDelayed"
+        android:onClick="addText"
+        android:text="@string/sendDelayed" />
+
     <TextView
         android:id="@+id/delayedResponse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/buttonDelayed"
         android:text="" />
 </RelativeLayout>

@@ -11,5 +11,7 @@
     <string name="TGraphQL">Transmission GraphQL</string>
     <string name="choixAuteur">Choix d\'un auteur</string>
     <string name="postesAuteur">Postes de l\'auteur</string>
+    <string name="textDelayed">Text to send</string>
+    <string name="sendDelayed">Send</string>
 
 </resources>
