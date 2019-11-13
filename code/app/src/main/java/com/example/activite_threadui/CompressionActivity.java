@@ -1,3 +1,7 @@
+/*
+Olivier & Matthieu
+Compression Activity
+ */
 package com.example.activite_threadui;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +19,7 @@ public class CompressionActivity extends AppCompatActivity {
 
         scmc = new SymComManagerCompression(getApplicationContext());
 
+        // On met à jour le TextView qu'on reçoit la réponse du serveur
         scmc.setCommunicationEventListener(new CommunicationEventListener() {
             @Override
             public boolean handleServerResponse(String reponse) {
