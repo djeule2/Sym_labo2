@@ -30,6 +30,7 @@ public class ObjetJsonActivity extends AppCompatActivity {
             Person person = new Person("Matthieu", "olivier", "M", 3);
             String serializer_person = new Serializer(person).serializeJson();
 
+
             symComManager.sendRequest(serializer_person, "http://sym.iict.ch/rest/json");
         } catch (Exception e) {
             e.printStackTrace();
