@@ -43,8 +43,10 @@ public class SymComManager {
                     sendRequestQueu();
                 }
             }
-        }, new IntentFilter(ConnectivityManager.EXTRA_NETWORK));
-    }
+
+            }, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+
+        }
 
     /*
     Permet d'envoyer un document request vers le serveur désigné par url
@@ -110,19 +112,22 @@ public class SymComManager {
                 conn.setRequestMethod("POST");
 
                 //adding the headers for request
-                conn.setRequestProperty("Content-Type", "application/json, charset=UTF-8");
-                conn.setRequestProperty("Accept", "application/json");
+                conn.setRequestProperty("Content-Type", "application/xml");
+                conn.setRequestProperty("Accept", "application/xml");
 
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
 
 
+
                 // to write the data in our request
                 OutputStream os = new BufferedOutputStream(conn.getOutputStream());
-
                 OutputStreamWriter writer =new OutputStreamWriter(os);
 
-                writer.write(my_data);
+
+
+               writer.write(my_data);
+
 
                 writer.flush();
                 writer.close();

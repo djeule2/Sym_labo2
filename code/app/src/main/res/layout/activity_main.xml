@@ -22,20 +22,32 @@
         android:text="@string/TDifferee" />
 
     <Button
-        android:id="@+id/TObj"
+        android:id="@+id/TObJson"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/TObjet"
+        android:text="@string/TObjetJson"
+        android:onClick="startObjetsJsonActivity"
         android:layout_below="@id/TDiff"/>
+    <Button
+        android:id="@+id/TObXml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/TObjetXml"
+        android:onClick="startObjetsXmlActivity"
+        android:layout_below="@id/TObJson"/>
 
     <Button
         android:id="@+id/TCom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/TObj"
-        android:onClick="startCompressionActivity"
-        android:text="@string/TCompressee" />
-
+        android:text="@string/TCompressee"
+        android:layout_below="@id/TObXml"/>
+    <Button
+        android:id="@+id/TGraphQL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/TGraphQl"
+        android:layout_below="@id/TCom"/>
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"

@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private SymComManager symComManager ;
@@ -26,13 +24,38 @@ public class MainActivity extends AppCompatActivity {
         buttonObjectJson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                        symComManager.sendRequest("{\"query\": \"{author(id: 23){id first_name last_name posts{title content}}}\"}" , " http://sym.iict.ch/api/graphql");
+                        symComManager.sendRequest("{\n" +
+                                " \"directory\":\n" +
+                                "   {\n" +
+                                "     \"person\":\n" +
+                                "       {\n" +
+                                "         \"name\": \"mathieu\",\n" +
+                                "         \"firstname\": \"mathieu\",\n" +
+                                "         \"gender\": \"m\",\n" +
+                                "         \"phone\" : 12133\n" +
+                                "        }\n" +
+                                "     }\n" +
+                                "}" , " http://sym.iict.ch/rest/json ");
 
             }
         });
 
+<<<<<<< HEAD
+        final Button buttonGraphQl = (Button) findViewById(R.id.TGraphQL);
+
+
+        buttonGraphQl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GraphQlActivity.class);
+                startActivity(intent);
+            }
+        });
+
+=======
  */
     }
+
 
     public void startAsyncActivity(View view) {
         Intent intent = new Intent(this, AsyncActivity.class);
@@ -42,6 +65,18 @@ public class MainActivity extends AppCompatActivity {
     public void startDelayedActivity(View view) {
         Intent intent = new Intent(this, DelayedActivity.class);
         startActivity(intent);
+    }
+
+    public void startObjetsXmlActivity (View view){
+        Intent intent = new Intent(this, ObjetsXmlActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void startObjetsJsonActivity (View view){
+        Intent intent = new Intent(this, ObjetJsonActivity.class);
+        startActivity(intent);
+
     }
 
     public void startCompressionActivity(View view) {
