@@ -7,14 +7,15 @@ package com.example.activite_threadui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import util.CommunicationEventListener;
+import util.SymComManager;
 
 public class DelayedActivity extends AppCompatActivity {
     private SymComManager scm;

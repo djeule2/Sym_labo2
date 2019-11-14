@@ -13,5 +13,6 @@
     <string name="postesAuteur">Postes de l\'auteur</string>
     <string name="textDelayed">Text to send</string>
     <string name="sendDelayed">Send</string>
+    <string name="waitForResponse">Wait for response</string>
 
 </resources>

@@ -22,9 +22,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.List;
+
+import util.CommunicationEventListener;
+import util.SymComManager;
 
 import static android.R.layout.simple_spinner_dropdown_item;
 

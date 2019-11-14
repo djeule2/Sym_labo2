@@ -1,4 +1,4 @@
-package com.example.activite_threadui;
+package model;
 
 public class Person {
     private String name    = "";

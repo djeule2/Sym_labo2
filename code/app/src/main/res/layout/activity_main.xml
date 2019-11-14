@@ -40,8 +40,9 @@
         android:id="@+id/TCom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/TCompressee"
-        android:layout_below="@id/TObXml"/>
+        android:layout_below="@id/TObXml"
+        android:onClick="startCompressionActivity"
+        android:text="@string/TCompressee" />
     <Button
         android:id="@+id/TGraphQL"
         android:layout_width="match_parent"
