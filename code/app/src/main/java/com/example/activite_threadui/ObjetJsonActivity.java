@@ -5,6 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import model.Person;
+import util.CommunicationEventListener;
+import util.Serializer;
+import util.SymComManager;
+
 public class ObjetJsonActivity extends AppCompatActivity {
     private SymComManager symComManager;
 

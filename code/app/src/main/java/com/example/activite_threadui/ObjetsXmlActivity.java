@@ -1,11 +1,14 @@
 package com.example.activite_threadui;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import model.Person;
+import util.CommunicationEventListener;
+import util.Serializer;
+import util.SymComManager;
 
 
 public class ObjetsXmlActivity extends AppCompatActivity {

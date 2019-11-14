@@ -1,4 +1,4 @@
-package com.example.activite_threadui;
+package util;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -26,13 +26,21 @@ import java.util.zip.DeflaterOutputStream;
 import java.util.zip.Inflater;
 import java.util.zip.InflaterInputStream;
 
-public class SymComManagerCompression {
+public class SymComManager {
+    public enum ENCODE_TYPE {
+        JSON("json"), XML("xml");
+        private final String text;
+        ENCODE_TYPE(String text) { this.text = text; }
+    }
+
     private Context context ;
+    private ENCODE_TYPE encodeType = ENCODE_TYPE.JSON;
+    private boolean compressed = false;
 
     private List<CommunicationEventListener> thelisteners = new LinkedList<>();
     private List<Pair<String, String>> waitingRequest= new LinkedList<>();
 
-    SymComManagerCompression(Context context) {
+    public SymComManager(Context context){
         this.context = context;
 
         context.registerReceiver(new BroadcastReceiver() {
@@ -42,31 +50,39 @@ public class SymComManagerCompression {
                     sendRequestQueu();
                 }
             }
-        }, new IntentFilter(ConnectivityManager.EXTRA_NETWORK));
-    }
+
+            }, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+
+        }
+
+        public SymComManager(Context context, ENCODE_TYPE type, boolean compressed) {
+            this(context);
+            this.encodeType = type;
+            this.compressed = compressed;
+        }
 
     /*
     Permet d'envoyer un document request vers le serveur désigné par url
     s'il n'y a pas de connexion internet on ajoute la requêt dans une file d'attente
      */
 
-    public void sendRequest(String request, String url) throws Exception { // TODO exception perso?
+    public void sendRequest(String request, String url) throws NetworkException {
         if(isNetworkAvailable()){
             new AsynTaskSendRequest().execute(url, request);
         }else {
             Toast.makeText (context, "Network is not available", Toast.LENGTH_LONG);
             waitingRequest.add(new Pair(url, request));
-
+            throw new NetworkException();
         }
 
     }
 
     public void sendRequestQueu(){
-        for (Pair<String, String> requestQueu: waitingRequest){
-            if(isNetworkAvailable()){
-                new AsynTaskSendRequest().execute(requestQueu.first, requestQueu.second);
-            }
-        }
+       for (Pair<String, String> requestQueu: waitingRequest){
+           if(isNetworkAvailable()){
+               new AsynTaskSendRequest().execute(requestQueu.first, requestQueu.second);
+           }
+       }
     }
 
 
@@ -78,15 +94,16 @@ public class SymComManagerCompression {
     }
 
     /*
-    Permet de définir un listener listener qui sera invoqué lorsque la réponse parviendra au client
+    Permet de définir un listener qui sera invoqué lorsque la réponse parviendra au client
      */
     public void setCommunicationEventListener (CommunicationEventListener listener){
-        if (!thelisteners.contains(listener))
+        if (!thelisteners.contains(listener)) {
             thelisteners.add(listener);
+        }
     }
 
 
-    private class AsynTaskSendRequest extends AsyncTask<String, Void, String> {
+    private class AsynTaskSendRequest extends AsyncTask<String, Void, String>{
 
         protected void onPreExecute(){
             super.onPreExecute();
@@ -95,42 +112,57 @@ public class SymComManagerCompression {
         protected String doInBackground (String... strings){
             String my_url = strings[0];
             String my_data = strings[1];
-            InflaterInputStream inputStream = null;
+            InputStream inputStream = null;
+            OutputStream os = null;
             HttpURLConnection conn = null;
 
             try {
                 URL url = new URL(my_url);
-
                 conn = (HttpURLConnection) url.openConnection();
-
                 // setting the request methode Type
                 conn.setRequestMethod("POST");
-
                 //adding the headers for request
-                conn.setRequestProperty("Content-Type", "application/json, charset=UTF-8");
-                conn.setRequestProperty("Accept", "application/json");
-                conn.setRequestProperty("X-Content-Encoding", "deflate");
-                conn.setRequestProperty("X-Network", "CSD");
+                conn.setRequestProperty("Content-Type", "application/"+ encodeType.text);
+                conn.setRequestProperty("Accept", "application/"+ encodeType.text);
+
+                if (compressed) {
+                    conn.setRequestProperty("X-Content-Encoding", "deflate");
+                    conn.setRequestProperty("X-Network", "CSD");
+                }
 
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
 
-                Deflater deflater = new Deflater(9, true);
-                DeflaterOutputStream dos = new DeflaterOutputStream(conn.getOutputStream(), deflater);
-                OutputStreamWriter writer = new OutputStreamWriter(dos);
+
+
+                if (compressed) {
+                    Deflater deflater = new Deflater(9, true);
+                    os = new DeflaterOutputStream(conn.getOutputStream(), deflater);
+                } else {
+                    // to write the data in our request
+                    os = new BufferedOutputStream(conn.getOutputStream());
+                }
+
+                OutputStreamWriter writer = new OutputStreamWriter(os);
+
                 writer.write(my_data);
                 writer.flush();
                 writer.close();
-                dos.close();
+                os.close();
 
                 conn.connect();
                 int response = conn.getResponseCode();
                 if (response != HttpURLConnection.HTTP_OK) {
-                    return "" + conn.getResponseCode();
+                    return "unsuccessful";
                 }
 
-                Inflater inflater = new Inflater(true);
-                inputStream = new InflaterInputStream(conn.getInputStream(), inflater);
+
+                if (compressed) {
+                    Inflater inflater = new Inflater(true);
+                    inputStream = new InflaterInputStream(conn.getInputStream(), inflater);
+                } else {
+                    inputStream = conn.getInputStream();
+                }
                 if (inputStream == null) {
                     return null;
                 }
@@ -171,4 +203,5 @@ public class SymComManagerCompression {
             }
         }
     }
+
 }

@@ -1,11 +1,16 @@
+/*
+Olivier & Matthieu
+Activité "Transmission Asynchrone"
+ */
 package com.example.activite_threadui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+
+import util.CommunicationEventListener;
+import util.SymComManager;
 
 public class AsyncActivity extends AppCompatActivity {
     private SymComManager symComManager ;
@@ -20,7 +25,7 @@ public class AsyncActivity extends AppCompatActivity {
         symComManager.setCommunicationEventListener(new CommunicationEventListener() {
             @Override
             public boolean handleServerResponse(String reponse) {
-                TextView textView = (TextView) findViewById(R.id.async_response);
+                TextView textView = findViewById(R.id.async_response);
                 textView.setText(reponse);
                 return true;
             }

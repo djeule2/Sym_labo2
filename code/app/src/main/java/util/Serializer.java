@@ -1,6 +1,8 @@
-package com.example.activite_threadui;
+package util;
 
 import android.util.Log;
+
+import model.Person;
 
 import org.jdom2.DocType;
 import org.jdom2.Document;
@@ -10,7 +12,6 @@ import org.jdom2.output.XMLOutputter;
 import org.json.JSONObject;
 import org.json.JSONException;
 import java.io.Serializable;
-import java.lang.ReflectiveOperationException;
 import java.text.ParseException;
 
 import java.lang.reflect.InvocationTargetException;
@@ -26,12 +27,11 @@ public class Serializer {
     private static final SimpleDateFormat DATETIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.ENGLISH);
     private Person persons;
 
-    Serializer(Person persons) {
+    public Serializer(Person persons) {
         this.persons = persons;
     }
 
-    protected String serializeXml() {
-
+    public String serializeXml() {
         Element racine = new Element("directory");
         DocType docType = new DocType("directory",
                 "http://sym.iict.ch/directory.dtd");
