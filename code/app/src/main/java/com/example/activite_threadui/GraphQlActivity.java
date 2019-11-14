@@ -30,7 +30,7 @@ import util.SymComManager;
 
 import static android.R.layout.simple_spinner_dropdown_item;
 
-public class GraphQLActivity extends AppCompatActivity implements OnItemSelectedListener {
+public class GraphQlActivity extends AppCompatActivity implements OnItemSelectedListener {
     private final String URL = "http://sym.iict.ch/api/graphql";
 
     private SymComManager scmAuthors; // Permet l'envoi et la réception des requêtes pour avoir les auteurs

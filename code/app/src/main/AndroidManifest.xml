@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GraphQLActivity"></activity>
+        <activity android:name=".GraphQlActivity"></activity>
         <activity android:name=".CompressionActivity" />
         <activity android:name=".ObjetJsonActivity"></activity>
         <activity android:name=".ObjetsXmlActivity" />

@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startGraphQLActivity(View view) {
-        Intent intent = new Intent(this, GraphQLActivity.class);
+        Intent intent = new Intent(this, GraphQlActivity.class);
         startActivity(intent);
     }
 }
