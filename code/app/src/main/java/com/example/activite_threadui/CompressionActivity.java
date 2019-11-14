@@ -29,7 +29,7 @@ public class CompressionActivity extends AppCompatActivity {
 
         final long timer = System.currentTimeMillis();
 
-        scm = new SymComManager(getApplicationContext(), SymComManager.ENCODE_TYPE.JSON, false);
+        scm = new SymComManager(getApplicationContext(), SymComManager.ENCODE_TYPE.JSON, true);
 
         // On met à jour le TextView qu'on reçoit la réponse du serveur
         scm.setCommunicationEventListener(new CommunicationEventListener() {
